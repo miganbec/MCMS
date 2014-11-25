@@ -15,6 +15,7 @@
 		8174FE341A1BDCC6008A4F13 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8174FE321A1BDCC6008A4F13 /* LaunchScreen.xib */; };
 		8174FE401A1BDCC6008A4F13 /* MCMSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8174FE3F1A1BDCC6008A4F13 /* MCMSTests.m */; };
 		8174FE4B1A1BDD4A008A4F13 /* MagicalCreature.m in Sources */ = {isa = PBXBuildFile; fileRef = 8174FE4A1A1BDD4A008A4F13 /* MagicalCreature.m */; };
+		8174FE4E1A24F5EE008A4F13 /* CreatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8174FE4D1A24F5EE008A4F13 /* CreatureViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,8 @@
 		8174FE3F1A1BDCC6008A4F13 /* MCMSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MCMSTests.m; sourceTree = "<group>"; };
 		8174FE491A1BDD4A008A4F13 /* MagicalCreature.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicalCreature.h; sourceTree = "<group>"; };
 		8174FE4A1A1BDD4A008A4F13 /* MagicalCreature.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagicalCreature.m; sourceTree = "<group>"; };
+		8174FE4C1A24F5EE008A4F13 /* CreatureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreatureViewController.h; sourceTree = "<group>"; };
+		8174FE4D1A24F5EE008A4F13 /* CreatureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreatureViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +97,8 @@
 				8174FE231A1BDCC6008A4F13 /* Supporting Files */,
 				8174FE491A1BDD4A008A4F13 /* MagicalCreature.h */,
 				8174FE4A1A1BDD4A008A4F13 /* MagicalCreature.m */,
+				8174FE4C1A24F5EE008A4F13 /* CreatureViewController.h */,
+				8174FE4D1A24F5EE008A4F13 /* CreatureViewController.m */,
 			);
 			path = MCMS;
 			sourceTree = "<group>";
@@ -227,6 +232,7 @@
 				8174FE2C1A1BDCC6008A4F13 /* ViewController.m in Sources */,
 				8174FE4B1A1BDD4A008A4F13 /* MagicalCreature.m in Sources */,
 				8174FE291A1BDCC6008A4F13 /* AppDelegate.m in Sources */,
+				8174FE4E1A24F5EE008A4F13 /* CreatureViewController.m in Sources */,
 				8174FE261A1BDCC6008A4F13 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
