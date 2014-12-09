@@ -12,6 +12,7 @@
 
 @interface ViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *creatureTextField;
+@property (weak, nonatomic) IBOutlet UITextField *detailTextField;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
@@ -22,14 +23,18 @@
     [super viewDidLoad];
     MagicalCreature *magicalCreatureOne = [[MagicalCreature alloc] init];
     magicalCreatureOne.name = @"Criatura Mágica Uno";
+    magicalCreatureOne.detail = @"1";
     MagicalCreature *magicalCreatureTwo = [[MagicalCreature alloc] init];
     magicalCreatureTwo.name = @"Criatura Mágica Dos";
+    magicalCreatureTwo.detail = @"2";
     MagicalCreature *magicalCreatureThree = [[MagicalCreature alloc] init];
     magicalCreatureThree.name = @"Criatura Mágica Tres";
+    magicalCreatureThree.detail = @"3";
     self.creatures = [NSMutableArray arrayWithObjects:magicalCreatureOne, magicalCreatureTwo, magicalCreatureThree, nil];
     for (MagicalCreature *magicalCreature in self.creatures) {
         NSLog(@"%@", magicalCreature.name);
     }
+    [self.tableView reloadData];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -40,6 +45,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"creatureCellId" forIndexPath:indexPath];
     MagicalCreature *creature = [self.creatures objectAtIndex:indexPath.row];
     cell.textLabel.text = creature.name;
+    cell.detailTextLabel.text = creature.detail;
     return cell;
 }
 
@@ -47,10 +53,13 @@
     NSLog(@"Botón agregar presionado...");
     MagicalCreature *magicalCreatureAgregar = [[MagicalCreature alloc] init];
     NSString *creatureName = self.creatureTextField.text;
+    NSString *detailName = self.detailTextField.text;
     magicalCreatureAgregar.name = creatureName;
+    magicalCreatureAgregar.detail = detailName;
     [self.creatures addObject:magicalCreatureAgregar];
-    [self.tableView reloadData];
     self.creatureTextField.text = @"";
+    self.detailTextField.text = @"";
+    [self.tableView reloadData];
 }
 
 - (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {

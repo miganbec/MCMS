@@ -24,6 +24,14 @@
                                     <rect key="frame" x="16" y="72" width="190" height="30"/>
                                 </variation>
                             </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nW9-US-poO">
+                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="16" y="110" width="82" height="30"/>
+                                </variation>
+                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DwD-Z8-Yba">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <state key="normal" title="Agregar">
@@ -40,11 +48,31 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="creatureCellId" id="VEk-t0-tgT">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="creatureCellId" textLabel="lbn-dh-cK6" detailTextLabel="Mcc-mE-2mH" style="IBUITableViewCellStyleValue1" id="VEk-t0-tgT">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VEk-t0-tgT" id="hbb-Jf-jup">
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lbn-dh-cK6">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="widthClass=compact">
+                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    </variation>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Mcc-mE-2mH">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="widthClass=compact">
+                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    </variation>
+                                                </label>
+                                            </subviews>
                                         </tableViewCellContentView>
                                         <gestureRecognizers/>
                                         <connections>
@@ -53,7 +81,7 @@
                                     </tableViewCell>
                                 </prototypes>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="110" width="400" height="490"/>
+                                    <rect key="frame" x="0.0" y="148" width="400" height="452"/>
                                 </variation>
                                 <connections>
                                     <outlet property="dataSource" destination="vXZ-lx-hvc" id="MfN-Qy-vrK"/>
@@ -65,6 +93,7 @@
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="7hb-Fy-p1S"/>
+                                <exclude reference="nW9-US-poO"/>
                                 <exclude reference="DwD-Z8-Yba"/>
                                 <exclude reference="poK-f6-G93"/>
                             </mask>
@@ -72,6 +101,7 @@
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="7hb-Fy-p1S"/>
+                                <include reference="nW9-US-poO"/>
                                 <include reference="DwD-Z8-Yba"/>
                                 <include reference="poK-f6-G93"/>
                             </mask>
@@ -80,6 +110,7 @@
                     <navigationItem key="navigationItem" id="biQ-Mh-xSI"/>
                     <connections>
                         <outlet property="creatureTextField" destination="7hb-Fy-p1S" id="uK0-jB-Gw0"/>
+                        <outlet property="detailTextField" destination="nW9-US-poO" id="7NU-LV-nhY"/>
                         <outlet property="tableView" destination="poK-f6-G93" id="4cD-Ol-dra"/>
                     </connections>
                 </viewController>
@@ -98,6 +129,15 @@
                     <view key="view" contentMode="scaleToFill" id="T4g-aD-GTu">
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8EO-8G-Fh6">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="181" width="400" height="42"/>
+                                </variation>
+                            </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qf4-un-M7A">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <state key="normal" title="Editar">
@@ -118,34 +158,48 @@
                                     <rect key="frame" x="70" y="435" width="260" height="30"/>
                                 </variation>
                             </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Sx7-HO-cJm">
+                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="152" y="473" width="97" height="30"/>
+                                </variation>
+                            </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GBF-fX-6wX">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="64" width="400" height="207"/>
+                                    <rect key="frame" x="0.0" y="64" width="400" height="42"/>
                                 </variation>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <variation key="default">
                             <mask key="subviews">
+                                <exclude reference="8EO-8G-Fh6"/>
                                 <exclude reference="Qf4-un-M7A"/>
                                 <exclude reference="whq-lb-5Rg"/>
+                                <exclude reference="Sx7-HO-cJm"/>
                                 <exclude reference="GBF-fX-6wX"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
+                                <include reference="8EO-8G-Fh6"/>
                                 <include reference="Qf4-un-M7A"/>
                                 <include reference="whq-lb-5Rg"/>
+                                <include reference="Sx7-HO-cJm"/>
                                 <include reference="GBF-fX-6wX"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
                         <outlet property="creatureTextView" destination="GBF-fX-6wX" id="dP9-tV-Hkz"/>
+                        <outlet property="detailTextField" destination="Sx7-HO-cJm" id="Opp-NY-uxr"/>
+                        <outlet property="detailTextView" destination="8EO-8G-Fh6" id="woV-0h-2mY"/>
                         <outlet property="editButton" destination="Qf4-un-M7A" id="C4B-4n-jZ8"/>
                         <outlet property="editTextField" destination="whq-lb-5Rg" id="wQ2-xp-KtU"/>
                     </connections>

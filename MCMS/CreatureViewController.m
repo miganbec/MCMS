@@ -12,8 +12,10 @@
 
 @interface CreatureViewController ()
 @property (weak, nonatomic) IBOutlet UITextView *creatureTextView;
+@property (weak, nonatomic) IBOutlet UITextView *detailTextView;
 @property (weak, nonatomic) IBOutlet UIButton *editButton;
 @property (weak, nonatomic) IBOutlet UITextField *editTextField;
+@property (weak, nonatomic) IBOutlet UITextField *detailTextField;
 @property (nonatomic, getter=isHidden) BOOL hidden;
 @end
 
@@ -22,8 +24,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.creatureTextView.text = self.creatureToEdit.name;
+    self.detailTextView.text = self.creatureToEdit.detail;
     self.hidden = TRUE;
     self.editTextField.hidden = self.hidden;
+    self.detailTextField.hidden = self.hidden;
 
 }
 
@@ -47,11 +51,16 @@
     if (self.editTextField.hidden) {
         [sender setTitle:@"Hecho" forState:UIControlStateNormal];
         self.editTextField.hidden = FALSE;
+        self.detailTextField.hidden = FALSE;
         self.editTextField.text = self.creatureToEdit.name;
+        self.detailTextField.text = self.creatureToEdit.detail;
     } else {
         self.creatureToEdit.name = self.editTextField.text;
+        self.creatureToEdit.detail = self.detailTextField.text;
         self.creatureTextView.text = self.creatureToEdit.name;
+        self.detailTextView.text = self.creatureToEdit.detail;
         self.editTextField.hidden = TRUE;
+        self.detailTextField.hidden = TRUE;
         [sender setTitle:@"Editar" forState:UIControlStateNormal];
     }
 }
