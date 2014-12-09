@@ -13,6 +13,7 @@
 @interface ViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *creatureTextField;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+
 @end
 
 @implementation ViewController
@@ -58,8 +59,9 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(UITableViewCell *)cell {
     CreatureViewController *creatureViewController = segue.destinationViewController;
-    creatureViewController.creatureName = cell.textLabel.text;
-    NSLog(@"Selección: %@", creatureViewController.creatureName);
+    creatureViewController.creatureToEdit = [self.creatures objectAtIndex:[self.tableView indexPathForCell:cell].row];
+    [self.tableView reloadData];
+    NSLog(@"Selección: %@", creatureViewController.creatureToEdit.name);
 }
 
 @end

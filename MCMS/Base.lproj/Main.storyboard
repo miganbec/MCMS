@@ -98,30 +98,56 @@
                     <view key="view" contentMode="scaleToFill" id="T4g-aD-GTu">
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qf4-un-M7A">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Editar">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="169" y="550" width="62" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="editButtonPressed:" destination="iAl-Sx-euL" eventType="touchUpInside" id="hMe-qi-qsY"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="whq-lb-5Rg">
+                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="70" y="435" width="260" height="30"/>
+                                </variation>
+                            </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GBF-fX-6wX">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="64" width="400" height="600"/>
+                                    <rect key="frame" x="0.0" y="64" width="400" height="207"/>
                                 </variation>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <variation key="default">
                             <mask key="subviews">
+                                <exclude reference="Qf4-un-M7A"/>
+                                <exclude reference="whq-lb-5Rg"/>
                                 <exclude reference="GBF-fX-6wX"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
+                                <include reference="Qf4-un-M7A"/>
+                                <include reference="whq-lb-5Rg"/>
                                 <include reference="GBF-fX-6wX"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
                         <outlet property="creatureTextView" destination="GBF-fX-6wX" id="dP9-tV-Hkz"/>
+                        <outlet property="editButton" destination="Qf4-un-M7A" id="C4B-4n-jZ8"/>
+                        <outlet property="editTextField" destination="whq-lb-5Rg" id="wQ2-xp-KtU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6sA-s2-LPD" userLabel="First Responder" sceneMemberID="firstResponder"/>
